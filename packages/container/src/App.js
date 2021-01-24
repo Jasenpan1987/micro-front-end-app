@@ -10,6 +10,7 @@ const AuthAppLazy = lazy(() => import("./Components/AuthApp"));
 
 const generateClassName = createGenerateClassName({
   productionPrefix: "containerApp",
+  seed: "containerApp",
 });
 
 const App = () => {

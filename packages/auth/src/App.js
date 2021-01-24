@@ -6,6 +6,7 @@ import Signup from "./Components/Signup";
 
 const generateClassName = createGenerateClassName({
   productionPrefix: "authApp",
+  seed: "authApp",
 });
 
 export default ({ history, handleSignIn }) => {

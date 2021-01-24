@@ -7,6 +7,7 @@ import Pricing from "./Pricing";
 
 const generateClassName = createGenerateClassName({
   productionPrefix: "marketingApp",
+  seed: "marketingApp",
 });
 
 export default ({ history }) => {

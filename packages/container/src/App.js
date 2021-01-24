@@ -1,5 +1,8 @@
 import React, { lazy, Suspense, useState } from "react";
-import { createGenerateClassName, StylesProvider } from "@material-ui/core";
+import {
+  createGenerateClassName,
+  StylesProvider,
+} from "@material-ui/core/styles";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Header from "./Components/Header";
@@ -9,8 +12,7 @@ const MarketingAppLazy = lazy(() => import("./Components/MarketingApp"));
 const AuthAppLazy = lazy(() => import("./Components/AuthApp"));
 
 const generateClassName = createGenerateClassName({
-  productionPrefix: "containerApp",
-  seed: "containerApp",
+  productionPrefix: "co",
 });
 
 const App = () => {

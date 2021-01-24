@@ -1,4 +1,7 @@
-import { createGenerateClassName, StylesProvider } from "@material-ui/core";
+import {
+  createGenerateClassName,
+  StylesProvider,
+} from "@material-ui/core/styles";
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 
@@ -6,8 +9,7 @@ import Landing from "./Landing";
 import Pricing from "./Pricing";
 
 const generateClassName = createGenerateClassName({
-  productionPrefix: "marketingApp",
-  seed: "marketingApp",
+  productionPrefix: "ma",
 });
 
 export default ({ history }) => {

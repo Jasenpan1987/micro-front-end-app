@@ -1,12 +1,14 @@
-import { createGenerateClassName, StylesProvider } from "@material-ui/core";
+import {
+  createGenerateClassName,
+  StylesProvider,
+} from "@material-ui/core/styles";
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import Signin from "./Components/Signin";
 import Signup from "./Components/Signup";
 
 const generateClassName = createGenerateClassName({
-  productionPrefix: "authApp",
-  seed: "authApp",
+  productionPrefix: "au",
 });
 
 export default ({ history, handleSignIn }) => {

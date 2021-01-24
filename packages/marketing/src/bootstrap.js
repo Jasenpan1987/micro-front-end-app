@@ -3,23 +3,29 @@ import ReactDOM from "react-dom";
 import { createMemoryHistory, createBrowserHistory } from "history";
 import App from "./App";
 
-const mount = (elem, { onNavigate, defaultHistory }) => {
+const mount = (elem, { onParentNavigate, defaultHistory, initialPath }) => {
   // in development mode, we are providing a browserHistory
   // in production mode, we will create a memoryHistory and use it
-  const history = defaultHistory || createMemoryHistory();
+  const childHistory =
+    defaultHistory ||
+    createMemoryHistory({
+      initialEntries: [initialPath],
+    });
 
-  if (onNavigate) {
-    history.listen(onNavigate);
+  if (onParentNavigate) {
+    // update child history when parent history changes
+    childHistory.listen(onParentNavigate);
   }
 
-  ReactDOM.render(<App history={history} />, elem);
+  ReactDOM.render(<App history={childHistory} />, elem);
 
   return {
-    parentNavigateHandle: (parentBrowserHistory) => {
-      const nextPathname = parentBrowserHistory.pathname;
-      const currentPathname = history.location.pathname;
+    // give parent a handle, when child history changes, update the parent history
+    onChildNavigate: (currentBrowserHistory) => {
+      const nextPathname = currentBrowserHistory.pathname;
+      const currentPathname = childHistory.location.pathname;
       if (nextPathname !== currentPathname) {
-        history.push(nextPathname);
+        childHistory.push(nextPathname);
       }
     },
   };

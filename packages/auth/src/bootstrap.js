@@ -3,7 +3,10 @@ import ReactDOM from "react-dom";
 import { createMemoryHistory, createBrowserHistory } from "history";
 import App from "./App";
 
-const mount = (elem, { onParentNavigate, initialPath, defaultHistory }) => {
+const mount = (
+  elem,
+  { onParentNavigate, initialPath, defaultHistory, handleSignIn }
+) => {
   // in development mode, we are providing a browserHistory
   // in production mode, we will create a memoryHistory and use it
   const childHistory =
@@ -17,7 +20,10 @@ const mount = (elem, { onParentNavigate, initialPath, defaultHistory }) => {
     childHistory.listen(onParentNavigate);
   }
 
-  ReactDOM.render(<App history={childHistory} />, elem);
+  ReactDOM.render(
+    <App history={childHistory} handleSignIn={handleSignIn} />,
+    elem
+  );
 
   return {
     // give parent a handle, when child history changes, update the parent history

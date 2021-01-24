@@ -82,7 +82,6 @@ export default function Header({ isSignedIn, onSignOut }) {
           >
             App
           </Typography>
-          {isSignedIn.toString()}
           <Button
             color="primary"
             variant="outlined"

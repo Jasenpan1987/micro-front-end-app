@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Switch } from "react-router-dom";
 import MarketingApp from "./Components/MarketingApp";
 import Header from "./Components/Header";
 import { createGenerateClassName, StylesProvider } from "@material-ui/core";
@@ -14,6 +14,7 @@ const App = () => {
       <StylesProvider generateClassName={generateClassName}>
         <div>
           <Header />
+          <Switch></Switch>
           <MarketingApp />
         </div>
       </StylesProvider>

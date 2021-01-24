@@ -6,7 +6,7 @@ import Landing from "./Landing";
 import Pricing from "./Pricing";
 
 const generateClassName = createGenerateClassName({
-  productionPrefix: "marketing",
+  productionPrefix: "marketingApp",
 });
 
 export default ({ history }) => {

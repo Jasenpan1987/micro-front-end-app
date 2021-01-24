@@ -24,7 +24,7 @@ const App = () => {
           />
           <Suspense fallback={<ProgressBar />}>
             <Switch>
-              <Route path="/" exact>
+              <Route path="/">
                 <MarketingAppLazy />
               </Route>
               <Route path="/auth">

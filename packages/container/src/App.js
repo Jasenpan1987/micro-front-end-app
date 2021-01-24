@@ -24,11 +24,11 @@ const App = () => {
           />
           <Suspense fallback={<ProgressBar />}>
             <Switch>
-              <Route path="/">
-                <MarketingAppLazy />
-              </Route>
               <Route path="/auth">
                 <AuthAppLazy onSignIn={() => setIsSignedIn(true)} />
+              </Route>
+              <Route path="/">
+                <MarketingAppLazy />
               </Route>
             </Switch>
           </Suspense>

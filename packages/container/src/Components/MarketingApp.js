@@ -25,6 +25,5 @@ export default () => {
     };
   }, []);
 
-  console.log("33");
   return <div ref={ref} />;
 };

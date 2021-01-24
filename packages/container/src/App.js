@@ -4,8 +4,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Header from "./Components/Header";
 import ProgressBar from "./Components/ProgressBar";
-// import AuthApp from "./Components/AuthApp";
-// import MarketingApp from "./Components/MarketingApp";
 
 const MarketingAppLazy = lazy(() => import("./Components/MarketingApp"));
 const AuthAppLazy = lazy(() => import("./Components/AuthApp"));
